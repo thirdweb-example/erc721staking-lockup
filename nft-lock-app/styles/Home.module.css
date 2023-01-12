@@ -1,119 +1,180 @@
 .container {
-  padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  margin-top: 96px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title a {
-  color: #f213a4;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.connect {
-  margin-bottom: 2rem;
-  width: 230px;
-}
-
-.description {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
+  position: absolute;
+  padding: 0 24px;
+}
+
+.h1 {
+  margin-bottom: 0px;
+}
+
+.explain {
+  font-size: 1.125rem;
   max-width: 1200px;
 }
 
-.card {
-  background-color: #1b2129;
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 350px;
+.divider {
+  width: 50%;
+  border-color: grey;
+  opacity: 0.25;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  background-color: #272c34;
-  color: #0ea5e9;
-  border-color: #0ea5e9;
+.smallDivider {
+  width: 25%;
+  border-color: grey;
+  margin-top: 64px;
+  opacity: 0.25;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.nftBoxGrid {
+  width: 1200px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  margin-top: 28px;
+  flex-wrap: wrap;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.nftBox {
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  width: 19%;
+  min-height: 200px;
+  padding: 16px;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.optionSelectBox {
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  width: 48%;
+  min-height: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.selectBoxTitle {
+  font-size: 1.75rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.selectBoxDescription {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0px;
+}
+
+/* Between 1200 and 800 */
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  .nftBox {
+    width: 49%;
+    margin-top: 16px;
   }
 }
 
-.card,
-.footer {
-  border-color: #222;
+/* beneath 800
+*/
+@media only screen and (max-width: 800px) {
+  .nftBoxGrid {
+    justify-content: center;
+  }
+  .nftBox {
+    width: 90%;
+    margin-top: 16px;
+  }
+  .optionSelectBox {
+    width: 90%;
+    margin-top: 16px;
+  }
 }
-.code {
-  background: #111;
+
+.tokenGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  width: 1600px;
+  max-width: 95vw;
+  flex-wrap: wrap;
+  margin: 16px 0;
 }
-.logo img {
-  filter: invert(1);
+
+.tokenItem {
+  width: 35%;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  gap: 16px;
+}
+
+.tokenLabel {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Second tokenLabel item */
+
+.tokenValue {
+  font-size: 1.3rem;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+/* On Mobile, make tokenGrid 100% width */
+@media only screen and (max-width: 850px) {
+  .tokenItem {
+    width: 90%;
+    margin-top: 12px;
+  }
+}
+
+/* Screen less than 630, then hide .center */
+@media only screen and (max-width: 630px) {
+  .center {
+    display: none;
+  }
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.bigSpacerTop {
+  margin-top: 32px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.detailPageHr {
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+.nftMedia {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 15px;
 }

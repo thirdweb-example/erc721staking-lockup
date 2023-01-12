@@ -1191,9 +1191,9 @@
   "version" "4.2.10"
 
 "hardhat@^2.10.1":
-  "integrity" "sha512-f/t7+hLlhsnQZ6LDXyV+8rHGRZFZY1sgFvgrwr9fBjMdGp1Bu6hHq1KXS4/VFZfZcVdL1DAWWEkryinZhqce+A=="
-  "resolved" "https://registry.npmjs.org/hardhat/-/hardhat-2.12.5.tgz"
-  "version" "2.12.5"
+  "integrity" "sha512-0Ent1O5DsPgvaVb5sxEgsQ3bJRt/Ex92tsoO+xjoNH2Qc4bFmhI5/CHVlFikulalxOPjNmw5XQ2vJFuVQFESAA=="
+  "resolved" "https://registry.npmjs.org/hardhat/-/hardhat-2.12.6.tgz"
+  "version" "2.12.6"
   dependencies:
     "@ethersproject/abi" "^5.1.2"
     "@metamask/eth-sig-util" "^4.0.0"
@@ -1242,7 +1242,7 @@
     "source-map-support" "^0.5.13"
     "stacktrace-parser" "^0.1.10"
     "tsort" "0.0.1"
-    "undici" "^5.4.0"
+    "undici" "^5.14.0"
     "uuid" "^8.3.2"
     "ws" "^7.4.6"
 
@@ -2050,10 +2050,10 @@
   "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.7.1.tgz"
   "version" "0.7.1"
 
-"undici@^5.4.0":
-  "integrity" "sha512-yJlHYw6yXPPsuOH0x2Ib1Km61vu4hLiRRQoafs+WUgX1vO64vgnxiCEN9dpIrhZyHFsai3F0AEj4P9zy19enEQ=="
-  "resolved" "https://registry.npmjs.org/undici/-/undici-5.14.0.tgz"
-  "version" "5.14.0"
+"undici@^5.14.0":
+  "integrity" "sha512-wCAZJDyjw9Myv+Ay62LAoB+hZLPW9SmKbQkbHIhMw/acKSlpn7WohdMUc/Vd4j1iSMBO0hWwU8mjB7a5p5bl8g=="
+  "resolved" "https://registry.npmjs.org/undici/-/undici-5.15.0.tgz"
+  "version" "5.15.0"
   dependencies:
     "busboy" "^1.6.0"
 

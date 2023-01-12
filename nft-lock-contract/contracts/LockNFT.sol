@@ -11,6 +11,7 @@ contract NFTStaker is Staking721Base {
     // User can earn and claim their staking rewards anytime
         
       mapping (uint256 => uint256) public nftLockTime;
+      mapping (uint256 => bool) public nftLocked;
 
       constructor(
         uint128 _timeUnit,
@@ -29,6 +30,7 @@ contract NFTStaker is Staking721Base {
     function _stake(uint256[] calldata _tokenIds) internal override {
         super._stake(_tokenIds);
         for (uint i = 0; i < _tokenIds.length; i++) {
+            nftLocked[_tokenIds[i]] = true;
             nftLockTime[_tokenIds[i]] = block.timestamp + 3 minutes;
         }
     }
@@ -43,7 +45,7 @@ contract NFTStaker is Staking721Base {
             block.timestamp > nftLockTime[_tokenIds[i]],
             "You can't withdraw unless your 30 days are completed!"
             );
-            nftLockTime[_tokenIds[i]] = 0;
+             nftLocked[_tokenIds[i]] = false;
         }
         super._withdraw(_tokenIds);
     }
