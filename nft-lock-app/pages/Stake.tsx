@@ -50,6 +50,8 @@ import {
   
       loadClaimableRewards();
     }, [address, contract]);
+
+    console.log(ownedNfts)
   
     async function stakeNft(id: string) {
       if (!address) return;
@@ -61,7 +63,7 @@ import {
       if (!isApproved) {
         await nftDropContract?.setApprovalForAll(STAKING_CONTRACT_ADDRESS, true);
       }
-      await contract?.call("stake", [id]);
+      await contract?.call("stakeNFT", [id]);
     }
   
     if (isLoading) {
@@ -121,16 +123,16 @@ import {
             <h2>Your Unstaked NFTs</h2>
             <div className={styles.nftBoxGrid}>
               {ownedNfts?.map((nft) => (
-                <div className={styles.nftBox} key={nft.metadata.id.toString()}>
+                  <div className={styles.nftBox} key={nft.metadata.id.toString()}>
                   <ThirdwebNftMedia
                     metadata={nft.metadata}
                     className={styles.nftMedia}
-                  />
+                    />
                   <h3>{nft.metadata.name}</h3>
                   <Web3Button
                     contractAddress={STAKING_CONTRACT_ADDRESS}
                     action={() => stakeNft(nft.metadata.id)}
-                  >
+                    >
                     Stake
                   </Web3Button>
                 </div>

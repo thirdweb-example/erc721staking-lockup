@@ -31,7 +31,7 @@ contract NFTStaker is Staking721Base {
         super._stake(_tokenIds);
         for (uint i = 0; i < _tokenIds.length; i++) {
             nftLocked[_tokenIds[i]] = true;
-            nftLockTime[_tokenIds[i]] = block.timestamp + 3 minutes;
+            nftLockTime[_tokenIds[i]] = block.timestamp + 30 days;
         }
     }
 
