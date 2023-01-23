@@ -35,23 +35,15 @@ contract NFTStaker is Staking721Base {
         }
     }
 
-     function stakeNFT(uint256[] calldata _tokenIds) public {
-        _stake(_tokenIds);
-    }
-
     function _withdraw(uint256[] calldata _tokenIds) internal override {
         for(uint i = 0; i < _tokenIds.length; i++) {
-         require(
+          require(
             block.timestamp > nftLockTime[_tokenIds[i]],
             "You can't withdraw unless your 30 days are completed!"
             );
-             nftLocked[_tokenIds[i]] = false;
+          nftLocked[_tokenIds[i]] = false;
         }
         super._withdraw(_tokenIds);
-    }
-
-    function withdrawNFT(uint256[] calldata _tokenIds) public {
-        _withdraw(_tokenIds);
     }
 
     function _mintRewards(address _staker, uint256 _rewards) internal override {
