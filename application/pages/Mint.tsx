@@ -5,9 +5,9 @@ import { NFT_CONTRACT_ADDRESS } from "../const/Index";
 import styles from "../styles/Home.module.css";
 
 const Mint: NextPage = () => {
-    const router = useRouter();
-    return(
-        <div className={styles.container}>
+  const router = useRouter();
+  return (
+    <div className={styles.container}>
       <h1 className={styles.h1}>Mint An NFT!</h1>
 
       <p className={styles.explain}>
@@ -22,7 +22,7 @@ const Mint: NextPage = () => {
         action={(contract) => contract.erc721.claim(1)}
         onSuccess={() => {
           alert("NFT Claimed!");
-          router.push("/Stake");
+          router.push("/stake");
         }}
         onError={(error) => {
           alert(error);
@@ -31,7 +31,7 @@ const Mint: NextPage = () => {
         Claim An NFT
       </Web3Button>
     </div>
-    )
-}
+  );
+};
 
-export default Mint
+export default Mint;
