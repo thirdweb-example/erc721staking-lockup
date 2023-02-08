@@ -17,6 +17,7 @@ import {
   import styles from "../styles/Home.module.css";
   
   const Stake: NextPage = () => {
+    
     const address = useAddress();
     const { contract: nftDropContract } = useContract(
       NFT_CONTRACT_ADDRESS,
@@ -26,7 +27,7 @@ import {
       TOKEN_CONTRACT_ADDRESS,
       "token"
     );
-    const { contract, isLoading } = useContract(STAKING_CONTRACT_ADDRESS);
+    const { contract, isLoading } = useContract(STAKING_CONTRACT_ADDRESS, "custom");
     const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
     const { data: tokenBalance } = useTokenBalance(tokenContract, address);
     const { mutateAsync: claimRewards } = useContractWrite(
@@ -63,7 +64,7 @@ import {
       if (!isApproved) {
         await nftDropContract?.setApprovalForAll(STAKING_CONTRACT_ADDRESS, true);
       }
-      await contract?.call("stakeNFT", [id]);
+      await contract?.call("stake", [id]);
     }
   
     if (isLoading) {
@@ -101,8 +102,8 @@ import {
             </div>
   
             <Web3Button
-              action={() => claimRewards([])}
               contractAddress={STAKING_CONTRACT_ADDRESS}
+              action={(contract) => contract.call("claimRewards")}
             >
               Claim Rewards
             </Web3Button>
