@@ -1,27 +1,34 @@
-# NFT Staking App
-
-## Introduction
-
-This example demonstrates a use of several thirdweb tools to create an NFT Staking application. In this example, users can stake their ERC721 NFTs and earn ERC20 tokens as a reward. It combines:
-
-- [NFT Drop contract](https://thirdweb.com/thirdweb.eth/DropERC721): To create a collection of NFTs that users can stake.
-- [Token contract](https://thirdweb.com/thirdweb.eth/TokenERC20): To create a token that users can earn as a reward for staking.
-- [NFT Staking contract](https://thirdweb.com/thirdweb.eth/NFTStake): To create a contract that users can stake their NFTs in, and earn tokens as a reward.
-
-## Using This Template
+## Getting Started
 
 Create a project using this example:
 
 ```bash
-npx thirdweb create --template nft-staking-app
+npx thirdweb create --template next-typescript-starter
 ```
 
-- Create an [NFT Drop](https://thirdweb.com/thirdweb.eth/DropERC721) contract using the dashboard.
-- Create a [Token](https://thirdweb.com/thirdweb.eth/TokenERC20) contract using the dashboard.
-- Create an [NFT Staking](https://thirdweb.com/thirdweb.eth/NFTStake) contract using the dashboard.
-- Approve the NFT Staking contract to transfer your tokens.
-- Deposit the tokens into the NFT Staking contract.
-- Update the information in the [contractAddresses.ts](./consts/contractAddresses.ts) file to
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+On `pages/_app.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
+[UI Components](https://portal.thirdweb.com/ui-components) to work.
+
+### Deploy to IPFS
+
+Deploy a copy of your application to IPFS using the following command:
+
+```bash
+yarn deploy
+```
+
+## Learn More
+
+To learn more about thirdweb and Next.js, take a look at the following resources:
+
+- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
+- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/typescript) - learn about our JavaScript/TypeScript SDK.
+- [thirdweb Portal](https://docs.thirdweb.com) - check our guides and development resources.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+
+You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
 
 ## Join our Discord!
 

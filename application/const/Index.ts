@@ -1,0 +1,7 @@
+// Replace these with your smart contract addresses
+export const STAKING_CONTRACT_ADDRESS =
+  "0xf516D16D3969922eCE9a03Eac5e292653494919A";
+export const NFT_CONTRACT_ADDRESS =
+  "0xc09425bcA7f9Ce577Ee4ceE37d4eF7E19B8C6c75";
+export const TOKEN_CONTRACT_ADDRESS =
+  "0xDEd061b166c2343ACa67660CEDd00B96A71d7808";
