@@ -30,16 +30,14 @@ import {
     const { contract, isLoading } = useContract(STAKING_CONTRACT_ADDRESS, "custom");
     const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
     const { data: tokenBalance } = useTokenBalance(tokenContract, address);
-    const { mutateAsync: claimRewards } = useContractWrite(
-      contract,
-      "claimRewards"
-    );
     const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
     const { data: stakedTokens } = useContractRead(
       contract,
       "getStakeInfo",
       address
     );
+
+    console.log(claimableRewards)
   
     useEffect(() => {
       if (!contract || !address) return;
@@ -50,7 +48,7 @@ import {
       }
   
       loadClaimableRewards();
-    }, [address, contract]);
+    }, [address, contract, claimableRewards]);
 
     console.log(ownedNfts)
   
@@ -88,7 +86,8 @@ import {
                   <b>
                     {!claimableRewards
                       ? "Loading..."
-                      : ethers.utils.formatUnits(claimableRewards, 18)}
+                      : ethers.utils.formatUnits(claimableRewards, 18)
+                      }
                   </b>{" "}
                   {tokenBalance?.symbol}
                 </p>
