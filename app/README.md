@@ -1,36 +1,34 @@
-# Lock NFT Staking App
-
-## Introduction
-
-This example demonstrates a use of several thirdweb tools to create an NFT Staking application that allows you to stake your NFT for an entire month and earn staking rewards. It combines:
-
-- [NFT Drop contract](https://thirdweb.com/thirdweb.eth/DropERC721): To create a collection of NFTs that users can stake.
-- [Token contract](https://thirdweb.com/thirdweb.eth/TokenERC20): To create a token that users can earn as a reward for staking.
-- [NFT Lock contract](https://thirdweb.com/0xabbask.eth/NFTLock): To create a contract that users can stake their NFTs in, and earn tokens as a reward.
-
-## Using This Template
+## Getting Started
 
 Create a project using this example:
 
 ```bash
-npx thirdweb create --template erc721staking-lockup
+npx thirdweb create --template next-typescript-starter
 ```
 
-- Create an [NFT Drop](https://thirdweb.com/thirdweb.eth/DropERC721) contract using the dashboard.
-- Create a [Token](https://thirdweb.com/thirdweb.eth/TokenERC20) contract using the dashboard.
-- Create an [NFT Staking](https://thirdweb.com/0xabbask.eth/NFTLock) contract using the dashboard.
-- Approve the NFT Staking contract to transfer your tokens.
-- Deposit the tokens into the NFT Staking contract.
-- Update the contract addresses in the [Index.ts](./const/Index.ts) file.
-- Configure your network
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-Inside `_app.tsx` you can configure the network you want to use:
+On `pages/_app.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
+[UI Components](https://portal.thirdweb.com/ui-components) to work.
 
-```jsx
-import { Mumbai } from "@thirdweb-dev/chains";
+### Deploy to IPFS
+
+Deploy a copy of your application to IPFS using the following command:
+
+```bash
+yarn deploy
 ```
 
-Pass the chain inside the ThirdwebProvider
+## Learn More
+
+To learn more about thirdweb and Next.js, take a look at the following resources:
+
+- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
+- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/typescript) - learn about our JavaScript/TypeScript SDK.
+- [thirdweb Portal](https://docs.thirdweb.com) - check our guides and development resources.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+
+You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
 
 ## Join our Discord!
 
